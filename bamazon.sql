@@ -12,7 +12,7 @@ CREATE TABLE products (
   PRIMARY KEY (item_id)
 );
 
-INSERT INTO products (position, item_id, product_name, department_name, price, stock_quantity)
+INSERT INTO products (product_name, department_name, price, stock_quantity)
 VALUES 
 ( "hammer", "tools", 20, 20),
 ("wrench", "tools", 10, 15),
@@ -25,5 +25,4 @@ VALUES
 ("serving utensils", "cooking", 30, 100),
 ("whisk", "cooking", 3, 40);
 
-
-
+SELECT * FROM products;0

@@ -53,7 +53,7 @@ function productSearch() {
                     console.log("not enough in stock")
                 } else {
                     var newstock = res[0].stock_quantity-answer2.quantity;
-                    var sql = `UPDATE products SET stock_quantity =${newstock} WHERE item_id = ${answer1.id}`;
+                    var sql = `UPDATE products SET stock_quantity = ${newstock} WHERE item_id = ${answer1.id}`;
                     connection.query(sql, function (err, result) {
                         if (err) throw err;
                     
@@ -71,5 +71,5 @@ function productSearch() {
     })
 }
 
-// Display();
+Display();
 productSearch();

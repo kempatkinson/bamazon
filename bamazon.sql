@@ -25,4 +25,4 @@ VALUES
 ("serving utensils", "cooking", 30, 100),
 ("whisk", "cooking", 3, 40);
 
-SELECT * FROM products;0
+SELECT * FROM products;

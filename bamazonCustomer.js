@@ -58,13 +58,16 @@ function productSearch() {
                         if (err) throw err;
                     
                     });
-                    console.log("your total is: " + res[0].price*answer2.quantity)
+                    var price = res[0].price*answer2.quantity;
+                    console.log("You pay: " + price)
+                    var sql2 = `UPDATE products SET product_sales = ${price} WHERE item_id = ${answer1.id}`;
+                    connection.query(sql2, function (err, result) {
+                        if (err) throw err;
+                    
+                    });
+
                 }
-
             })
-
-
-
 
         })
 

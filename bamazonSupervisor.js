@@ -76,26 +76,50 @@ function newDepartment() {
 
 
 runSearch();
-
+var table = new Table({
+    head: ['id', 'name', 'overhead costs', 'product sales', 'total profit']
+    , colWidths: [30, 30, 30, 30, 30]
+});
 function viewSales() {
     // instantiate
-    var table = new Table({
-        head: ['name', 'overhead costs', 'product sales']
-        , colWidths: [50, 50, 50]
-    });
-    
-    var query = "SELECT * FROM departments";
 
+
+    var query = "SELECT * FROM departments"
     connection.query(query, function (err, res) {
         if (err) throw err;
+
         for (var i = 0; i < res.length; i++) {
-            table.push(
-                [res[i].department_name , res[i].over_head_costs , `third value`]
-            );
+
+            
+            
+            var query2 = "SELECT * FROM products WHERE department_name='" + res[i].department_name + "'";
+
+            connection.query(query2, function (err, res2) {
+                if (err) throw err;
+
+                var dept_product_sales = 0;
+
+                for (var j = 0; j < res2.length; j++) {
+                    dept_product_sales += res2[j].product_sales;
+                }
+                console.log(i)
+                console.log(dept_product_sales)
+
+                
+                var total_sales = dept_product_sales - res[i].over_head_costs;
+
+                table.push(
+                    [res[i].department_id, res[i].department_name, res[i].over_head_costs, dept_product_sales, total_sales]
+                )
+            
+            })
+         
+
         }
         // table is an Array, so you can `push`, `unshift`, `splice` and friends
-    })
-    console.log(table.toString());
+        console.log(table.toString());
 
-    connection.end();
-}  
+    })
+
+}
+

@@ -46,6 +46,7 @@ function productSearch() {
             message: "how many do you want?",
             type: "input"
         }).then(function (answer2) {
+            
             connection.query(`SELECT * FROM products WHERE item_id = ${answer1.id};`, function (err, res) {
                 if (err) throw err;
 
@@ -60,7 +61,8 @@ function productSearch() {
                     });
                     var price = res[0].price*answer2.quantity;
                     console.log("You pay: " + price)
-                    var sql2 = `UPDATE products SET product_sales = ${price} WHERE item_id = ${answer1.id}`;
+                    var product_sales = res[0].product_sales + price;
+                    var sql2 = `UPDATE products SET product_sales = ${product_sales} WHERE item_id = ${answer1.id}`;
                     connection.query(sql2, function (err, result) {
                         if (err) throw err;
                     

@@ -40,3 +40,5 @@ VALUES
     ("cooking", 5000);
 
 SELECT * FROM products;
+
+SELECT * FROM products WHERE department_name='entertainment';

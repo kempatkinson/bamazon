@@ -23,18 +23,14 @@ Running `node bamazonManager.js` will:
 
   * List a set of menu options:
 
-    * View Products for Sale
-      If a manager selects `View Products for Sale`, the app lists every available item: the item IDs, names, prices, and quantities.
+    * If a manager selects `View Products for Sale`, the app lists every available item: the item IDs, names, prices, and quantities.
     
-    * View Low Inventory
-     If a manager selects `View Low Inventory`, then it lists all items with an inventory count lower than five.
+    * If a manager selects `View Low Inventory`, then it lists all items with an inventory count lower than five.
 
     
-    * Add to Inventory
-     If a manager selects `Add to Inventory`, your app displays a prompt that will let the manager "add more" of any item currently in the store.
+    * If a manager selects `Add to Inventory`, your app displays a prompt that will let the manager "add more" of any item currently in the store.
     
-    * Add New Product
-    If a manager selects `Add New Product`, it allows the manager to add a completely new product to the store.
+    * If a manager selects `Add New Product`, it allows the manager to add a completely new product to the store.
 
 
 
@@ -44,11 +40,8 @@ SUPERVISOR  (this table is a little unfunctional)
 
  Running "node bamazonSupervisor.js" will list a set of menu options:
 
-   * View Product Sales by Department
-   When a supervisor selects `View Product Sales by Department`, the app should display a summarized table in their terminal/bash window. This table contains the department id's, department names, overhead costs, product sales, and total profits (the difference between overhead costs and product sales).
+   * When a supervisor selects `View Product Sales by Department`, the app should display a summarized table in their terminal/bash window. This table contains the department id's, department names, overhead costs, product sales, and total profits (the difference between overhead costs and product sales).
    
-   * Create New Department
-  This simply allows the manager to create a new department.
-
+   * When a supervisor selects `Create New Department`, this simply allows the manager to create a new department.
 
 ![Manager](./screenshots/Supervisor.png)
